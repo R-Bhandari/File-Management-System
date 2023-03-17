@@ -5,34 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RDRS | Sign Up</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="signup">
-        <div class="signup-box">
-            <h1>RDRS File Management System</h1>
-            <form action="form-validate.php" method="post">
-                <label for="">Name</label>
-                <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
-
-                <label>Email</label>
-                <input type="email" name="email" id="email" placeholder="Enter Your E-Mail" required>
-                
-                <label for="">Phone Number</label>
-                <input type="number" name="pnumber" id="pnumber" placeholder="Enter Your Phone Number" required>
-
-                <label for="">User Name</label>
-                <input type="text" name="username" id="username" placeholder="Enter Your User Name" required>
-
-                <label for="">Password</label>
-                <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
-                
-                <label for="">Re-enter Password</label>
-                <input type="password" name="r-password" id="r-password" placeholder="Re-enter Your Password" required>
-
-                <input type="submit" value="Sign Up" id="form-submit">
-
-            </form>
-            <p>Already have an account? <a href="index.html">Login</a></p>
+    <section class="login">
+        <div class="login-box">
+            <h1>Cloudi-fi</h1>
+            <div class="form-login">
+                <form action="form-validate.php" method="post" id="login-form">
+                    <!-- <label for="">Name</label> -->
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+    
+                    <!-- <label>Email</label> -->
+                    <input type="email" name="email" id="email" placeholder="Enter Your E-Mail" required>
+                    
+                    <!-- <label for="">Phone Number</label> -->
+                    <input type="number" name="pnumber" id="pnumber" placeholder="Enter Your Phone Number" required>
+    
+                    <!-- <label for="">User Name</label> -->
+                    <input type="text" name="username" id="username" placeholder="Enter Your User Name" required>
+    
+                    <!-- <label for="">Password</label> -->
+                    <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
+                    
+                    <!-- <label for="">Re-enter Password</label> -->
+                    <input type="password" name="r-password" id="r-password" placeholder="Re-enter Your Password" required>
+    
+                    <input type="submit" value="Sign Up" id="form-submit">
+    
+                </form>
+                <p>Already have an account? <a href="index.html">Login</a></p>
+            </div>
         </div>
     </section>
     <section class="footer">

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Marck+Script&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(bg-image.jpg);
+}
+
+/* INDEX PAGE (LOGIN PAGE) */
+.form-login{
+    margin: auto 30%;
+}
+
+.form-login{
+    border: 1px solid white;
+    margin: 50px o;
+    padding: 20px 30px;
+}
+.form-login p{
+    text-align: center;
+    color: white;
+}
+a{
+    color: red;
+}
+h1{
+    text-align: center;
+    margin-bottom: 1%;
+    margin-top: 3%;
+    font-size: 80px;
+    font-family: 'Marck Script', cursive;
+    color: whitesmoke;
+}
+#login-form input, #login-form label{
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: #e0dada;
+    display: block;
+    color: black;
+    border-radius: 20px;
+    font-family: 'Handlee', cursive;
+    font-weight: 500;
+    
+}
+::placeholder {
+    color: black;
+  }
+
+
+.footer-content p{
+    margin-top: 13%;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    color: white;
+    background-color: rgb(32, 28, 28);
+}
+.footer{
+    justify-content: baseline;
+}
+
+/* REGISTRATION PAGE */
