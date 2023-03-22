@@ -6,11 +6,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $db = "cloudi-fi";
     $username = "root";
     $password = "";
-    // $conn = mysqli_connect($servername, $username, $password);
-    $conn = mysqli_connect($servername, $username, $password, $db);
+    
+    try {
+        // $conn = mysqli_connect($servername, $username, $password);
+        $conn = mysqli_connect($servername, $username, $password, $db);
+        echo "Success";
+    } catch (Exception $e) {
+        echo "<script> alert('Sorry!!! Could not connect to database. Try some time later'); 
+        window.location.href = 'signup.html';
+        </script>";
+        die("Couldn't connect" . mysqli_connect_error());
+    }
 
-    if (!$conn) die("Couldn't connect" . mysqli_connect_error());
-    else echo "Success";
 
     // $sql = "CREATE DATABASE `cloudi-fi`";
     // $result = mysqli_query($conn, $sql);
@@ -30,14 +37,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "INSERT INTO `users` (`name`, `email`, `phone_number`, `user_name`, `password`) VALUES ('$name', '$email', '$pnumber', '$username', '$password')";
-    $result = mysqli_query($conn, $sql);
+    try {
+        $sql = "INSERT INTO `users` (`name`, `email`, `phone_number`, `user_name`, `password`) VALUES ('$name', '$email', '$pnumber', '$username', '$password')";
+        $result = mysqli_query($conn, $sql);
 
-    echo "<br>";
+        echo "<br>";
+    
+        if ($result) echo "Registered Succesfully <script> alert('You have been registered successfully !!!') 
+        window.location.href = 'index.html'</script>";
+        else echo "<script> window.location.href = 'signup.html'</script>";
+    } catch (Exception $e) {
+        echo "Registered Succesfully <script> alert('This Username already exists. Try different username') 
+        window.location.href = 'signup.html'</script>";
+    }
 
-    if ($result) echo "Registered Succesfully <script> alert('You have been registered successfully !!!') 
-    window.location.href = 'index.html'</script>";
-    else echo "<script> window.location.href = 'signup.html'</script>";
     
 }
 

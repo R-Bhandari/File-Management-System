@@ -8,9 +8,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $password = "";
     $relation = 'users';
 
-    $conn = mysqli_connect($servername, $username, $password, $db);
+    try {
+        $conn = mysqli_connect($servername, $username, $password, $db);
+    } catch (Exception $e) {
+        echo "<script> alert('Sorry!!! Could not connect to database. Try some time later'); 
+        window.location.href = 'index.html';
+        </script>";
+        die("Couldn't connect" . mysqli_connect_error());
+    }
 
-    if (!$conn) die("Coudln't Connect : " . mysqli_connect_error());
     
     $username = $_POST['username'];
     $password = $_POST['password'];
