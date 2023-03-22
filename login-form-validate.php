@@ -15,22 +15,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $q1 = "SELECT 1 FROM $relation WHERE USER_NAME = $username";
-    $q2 = "SELECT 1 FROM $relation WHERE PASSWORD = $password";
+    $q1 = "SELECT * FROM $relation WHERE `user_name` = '$username' and `password` = '$password'";
+    
+    $log = mysqli_query($conn, $q1);
+    $rows = mysqli_num_rows($log);
+    echo $rows;
 
-    $username = mysqli_query($conn, $q1);
-    $password = mysqli_query($conn, $q2);
-
-    if (!$username) {
-        echo "<script> alert('Please sign up !!!');
-        window.location.href = 'signup.html';
-        </script>";
-    } else if (!$password) {
-        echo "<script> alert('Wrong Password !!!');
+    if ($rows) {
+        echo "<script> window.location.href = 'dashboard.html' </script>";
+    } else {
+        echo "<script> alert('Wrong username or password');
         window.location.href = 'index.html';
         </script>";
-    } else {
-        echo "<script> window.location.href = 'dashboard.html' </script>";
     }
 
 }
