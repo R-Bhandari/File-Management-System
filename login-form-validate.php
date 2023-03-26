@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($rows) {
         echo "<script> window.location.href = 'dashboard.html' </script>";
     } else {
-        echo "<script> alert('Wrong username or password');
+        echo "<script> alert('Either Username or Password is Wrong');
         window.location.href = 'index.html';
         </script>";
     }
