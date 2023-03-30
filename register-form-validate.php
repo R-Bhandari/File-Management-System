@@ -36,6 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $pnumber = $_POST['pnumber'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $password = password_hash($password, PASSWORD_BCRYPT);
+    if (!$password) {
+        die("Some error occurred." . "
+        <script>
+        alert('Some error occured. Try again !!!');
+        window.location.href='signup.html';
+        </script>   
+        ");
+    }
 
     try {
         $sql = "INSERT INTO `users` (`name`, `email`, `phone_number`, `user_name`, `password`) VALUES ('$name', '$email', '$pnumber', '$username', '$password')";

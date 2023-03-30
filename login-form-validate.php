@@ -21,24 +21,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $q1 = "SELECT `user_name`, `password` FROM $relation WHERE `user_name` = '$username' AND `password` = '$password'";
+    $q1 = "SELECT `user_name`, `password` FROM $relation WHERE `user_name` = '$username'";
     
     $log = mysqli_query($conn, $q1);
     $rows = mysqli_num_rows($log);
     echo $rows;
 
     if ($rows) {
-        // echo "<script> window.location.href = 'dashboard.html' </script>";
         $user = mysqli_fetch_assoc($log);
-        if ($username == $user['user_name'] && $password == $user['password']) {
-            echo "<script> window.location.href = 'dashboard.html' </script>";
+        if (password_verify($password, $user['password'])) {
+            echo "<script> window.location.href = 'dashboard.php' </script>";
         }else {
-            echo "<script> alert('Either Username or Password is Wrong');
+            echo "<script> alert('Password is Wrong');
             window.location.href = 'index.html';
             </script>";
         }
     } else {
-        echo "<script> alert('Either Username or Password is Wrong');
+        echo "<script> alert('No such username exist. Kindly check your username or register yourself');
         window.location.href = 'index.html';
         </script>";
     }
