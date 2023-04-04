@@ -1,6 +1,11 @@
 <?php
 
 session_start();
+if (isset($_SESSION['username'])) {
+  echo "Logged in";
+} else {
+  header("location : index.php");
+}
 
 ?>
 
@@ -17,7 +22,7 @@ session_start();
 
   <body>
     <div class="nav-bar">
-      <a href="#">Log Out</a>
+      <a href="logout.php">Log Out</a>
       <a href="#">Profile</a>
     </div>
 
