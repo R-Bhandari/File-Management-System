@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $conn = mysqli_connect($servername, $username, $password, $db);
     } catch (Exception $e) {
         echo "<script> alert('Sorry!!! Could not connect to database. Try some time later'); 
-        window.location.href = 'index.html';
+        window.location.href = 'index.php';
         </script>";
         die("Couldn't connect" . mysqli_connect_error());
     }
@@ -36,12 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             echo "<script> window.location.href = 'dashboard.php' </script>";
         }else {
             echo "<script> alert('Password is Wrong');
-            window.location.href = 'index.html';
+            window.location.href = 'index.php';
             </script>";
         }
     } else {
         echo "<script> alert('No such username exist. Kindly check your username or register yourself');
-        window.location.href = 'index.html';
+        window.location.href = 'index.php';
         </script>";
     }
 

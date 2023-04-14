@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         echo "<br>";
     
         if ($result) echo "Registered Succesfully <script> alert('You have been registered successfully !!!') 
-        window.location.href = 'index.html'</script>";
+        window.location.href = 'index.php'</script>";
         else echo "<script> window.location.href = 'signup.html'</script>";
     } catch (Exception $e) {
         echo "Registered Succesfully <script> alert('This Username already exists. Try different username') 
